@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+/***************
+variables
+***************/
+$fontFamily: 'Roboto', sans-serif;
+$fontSize: 16px;
+$orange: #ff8c00;
+$white: #fff;
+$black: #000;
+$text: #333;
+$lightGray: #d3d3d3;
+$transition: .3s ease;
+$padding: 80px 0;
+
+/***************
+basic styles
+***************/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: $fontFamily;
+    font-size: $fontSize;
+    line-height: 1.6;
+    color: $text;
+}
+.container {
+    width: 85%;
+    margin: auto;
+}
+a {
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+}
+
+/***************
+mixins
+***************/
+@mixin flex($justify, $align, $direction: row) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+}
+@mixin btn($bgColor, $color, $padding) {
+    text-transform: uppercase;
+    color: $color;
+    background: $bgColor;
+    border-radius: 6px;
+    padding: $padding;
+    border: 1px solid $white;
+    cursor: pointer;
+    font-weight: 600;
+}
+@mixin h2 {
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+/***************
+nav
+***************/
+nav {
+    background-color: $black;
+    .container {
+        @include flex(space-between, center);
+        padding: 15px;
+        .navigation {
+            @include flex(space-between, center);
+            ul {
+                @include flex(space-between, center);
+                li {
+                    margin-right: 30px;
+                    a {
+                        color: $white;
+                        transition: $transition;
+                        font-size: 0.9rem;
+                        &:hover {
+                            font-size: 1.1rem;
+                        }
+                    }
+                }
+            }
+            button {
+                @include btn(transparent, lightGray, 7px 9px);
+            }
+        }
+    }
+}
+
+/***************
+header
+***************/
+header {
+    background-image: url(images/bg_header.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 85vh;
+    hgroup {
+        @include flex(center, center, column);
+        height: 80vh;
+        h1 {
+            font-size: 3rem;
+            color: $white;
+            letter-spacing: 2px;
+        }
+        h5 {
+            font-size: 1.2rem;
+            color: $white;
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+        button:first-child {
+            @include btn(transparent, white, 15px 30px);
+            &:hover {
+                color: $lightGray;
+                transition: $transition;
+            }
+        }
+        button:last-child {
+            @include btn($orange, white, 15px 40px);
+            &:hover {
+                color: $lightGray;
+                transition: $transition;
+            }
+        }
+    }
+}
+
+/***************
+about
+***************/
+.about {
+    padding: $padding;
+    text-align: center;
+    h2 {
+        @include h2;
+    }
+}
+
+/***************
+services
+***************/
+.services {
+    background-color: $lightGray;
+    text-align: center;
+    padding: $padding;
+    h3 {
+        font-size: 1.6rem;
+        font-weight: 400;
+        margin-bottom: 40px;
+    }
+    .container {
+        @include flex(space-between, center);
+        article {
+            flex: 0 0 23%;
+            .fas {
+                font-size: 2.5rem;
+                margin-bottom: 30px;
+            }
+            p {
+                font-weight: 300;
+            }
+        }
+    }
+}
+
+/***************
+qa
+***************/
+.qa {
+    padding: $padding;
+    h2 {
+        @include h2;
+        text-align: center;
+    }
+    .container {
+        @include flex(space-between, center);
+        article {
+            flex: 0 0 48%;
+            h3 {
+                font-size: 1.5rem;
+                font-weight: 400;
+                margin-bottom: 10px;
+            }
+            p  {
+                font-weight: 300;
+            }
+        }
+        article:nth-child(1) {
+            margin-bottom: 30px;
+        }
+        article:nth-child(2) {
+            margin-bottom: 30px;
+        }
+    }
+}

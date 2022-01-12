@@ -1,0 +1,232 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+/***************
+variables
+***************/
+/***************
+basic styles
+***************/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.container {
+  width: 85%;
+  margin: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/***************
+mixins
+***************/
+/***************
+nav
+***************/
+nav {
+  background-color: #000;
+}
+nav .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  padding: 15px;
+}
+nav .container .navigation {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+nav .container .navigation ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+nav .container .navigation ul li {
+  margin-right: 30px;
+}
+nav .container .navigation ul li a {
+  color: #fff;
+  transition: 0.3s ease;
+  font-size: 0.9rem;
+}
+nav .container .navigation ul li a:hover {
+  font-size: 1.1rem;
+}
+nav .container .navigation button {
+  text-transform: uppercase;
+  color: lightGray;
+  background: transparent;
+  border-radius: 6px;
+  padding: 7px 9px;
+  border: 1px solid #fff;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/***************
+header
+***************/
+header {
+  background-image: url(images/bg_header.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 85vh;
+}
+header hgroup {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 80vh;
+}
+header hgroup h1 {
+  font-size: 3rem;
+  color: #fff;
+  letter-spacing: 2px;
+}
+header hgroup h5 {
+  font-size: 1.2rem;
+  color: #fff;
+  font-weight: 300;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+header hgroup button:first-child {
+  text-transform: uppercase;
+  color: white;
+  background: transparent;
+  border-radius: 6px;
+  padding: 15px 30px;
+  border: 1px solid #fff;
+  cursor: pointer;
+  font-weight: 600;
+}
+header hgroup button:first-child:hover {
+  color: #d3d3d3;
+  transition: 0.3s ease;
+}
+header hgroup button:last-child {
+  text-transform: uppercase;
+  color: white;
+  background: #ff8c00;
+  border-radius: 6px;
+  padding: 15px 40px;
+  border: 1px solid #fff;
+  cursor: pointer;
+  font-weight: 600;
+}
+header hgroup button:last-child:hover {
+  color: #d3d3d3;
+  transition: 0.3s ease;
+}
+
+/***************
+about
+***************/
+.about {
+  padding: 80px 0;
+  text-align: center;
+}
+.about h2 {
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+/***************
+services
+***************/
+.services {
+  background-color: #d3d3d3;
+  text-align: center;
+  padding: 80px 0;
+}
+.services h3 {
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+.services .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+.services .container article {
+  flex: 0 0 23%;
+}
+.services .container article .fas {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+.services .container article p {
+  font-weight: 300;
+}
+
+/***************
+qa
+***************/
+.qa {
+  padding: 80px 0;
+}
+.qa h2 {
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.qa .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+.qa .container article {
+  flex: 0 0 48%;
+}
+.qa .container article h3 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+.qa .container article p {
+  font-weight: 300;
+}
+.qa .container article:nth-child(1) {
+  margin-bottom: 30px;
+}
+.qa .container article:nth-child(2) {
+  margin-bottom: 30px;
+}
+
+/*# sourceMappingURL=style.css.map */
