@@ -33,6 +33,9 @@ body {
 .container {
     width: 85%;
     margin: auto;
+    @media (max-width: 767px) {
+        width: 95%;
+    }
 }
 a {
     text-decoration: none;
@@ -76,8 +79,16 @@ nav {
     .container {
         @include flex(space-between, center);
         padding: 15px;
+        .logo {
+            @media (max-width: 767px) {
+                margin: 10px auto;
+            }
+        }
         .navigation {
             @include flex(space-between, center);
+            @media (max-width: 767px) {
+                margin: auto;
+            }
             ul {
                 @include flex(space-between, center);
                 li {
@@ -107,13 +118,23 @@ header {
     background-position: center;
     background-size: cover;
     height: 85vh;
+    @media (max-width: 767px) {
+        height: 70vh;
+    }
     hgroup {
         @include flex(center, center, column);
         height: 80vh;
+        @media (max-width: 767px) {
+            text-align: center;
+            height: 60vh;
+        }
         h1 {
             font-size: 3rem;
             color: $white;
             letter-spacing: 2px;
+            @media (max-width: 767px) {
+                font-size: 2.5rem;
+            }
         }
         h5 {
             font-size: 1.2rem;
@@ -161,14 +182,23 @@ services
         font-size: 1.6rem;
         font-weight: 400;
         margin-bottom: 40px;
+        @media (max-width: 767px) {
+            margin-bottom: 20px;
+        }
     }
     .container {
         @include flex(space-between, center);
         article {
             flex: 0 0 23%;
+            @media (max-width: 767px) {
+                flex: 0 0 100%;
+            }
             .fas {
                 font-size: 2.5rem;
                 margin-bottom: 30px;
+                @media (max-width: 767px) {
+                    margin-top: 30px;
+                }
             }
             p {
                 font-weight: 300;
@@ -190,6 +220,10 @@ qa
         @include flex(space-between, center);
         article {
             flex: 0 0 48%;
+            @media (max-width: 767px) {
+                flex: 0 0 100%;
+                text-align: center;
+            }
             h3 {
                 font-size: 1.5rem;
                 font-weight: 400;
@@ -204,6 +238,80 @@ qa
         }
         article:nth-child(2) {
             margin-bottom: 30px;
+        }
+    }
+}
+
+/***************
+learn more
+***************/
+.learnMore {
+    background: $lightGray;
+    padding: 40px;
+    p {
+        margin-bottom: 20px;
+    }
+    button {
+        @include btn ($orange,$white, 10px 20px);
+        display: block;
+        margin-left: auto;
+        @media (max-width: 767px) {
+            margin: auto;
+        }
+    }
+}
+
+/***************
+footer
+***************/
+footer {
+    background: $black;
+    color: $white;
+    padding: 50px 0;
+    .container {
+        @include flex(space-between, flex-start);
+        article:nth-child(1) {
+            flex: 0 0 25%;
+            @media (max-width: 767px) {
+                flex: 0 0 50%;
+            }
+            h4 {
+                margin-bottom: 10px;
+            }
+            p {
+                font-weight: 300;
+                font-size: 0.8rem;
+                margin-bottom: 10px;
+                color: $lightGray;
+            }
+        }
+        article:nth-child(2) {
+            flex: 0 0 25%;
+            @media (max-width: 767px) {
+                flex: 0 0 50%;
+            }
+            h4 {
+                margin-bottom: 10px;
+            }
+            .fab {
+                font-size: 1.3rem;
+                margin-right: 10px;
+            }
+        }
+        article:nth-child(3) {
+            flex: 0 0 50%;
+            @media (max-width: 767px) {
+                flex: 0 0 100%;
+                order: -2;
+                margin-bottom: 20px;
+            }
+            h4 {
+                margin-bottom: 10px;
+            }
+            p {
+                color: $lightGray;
+                font-size: 0.8rem;
+            }
         }
     }
 }
